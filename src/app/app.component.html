@@ -1,1 +1,11 @@
-<app-page></app-page>
+<h1 [ngStyle]="{'color': main_title_color }">Main title</h1>
+
+<div class="carts" >
+    <div *ngFor = 'let content of all_content; let i = index'> 
+      <div [ngStyle]="{ 'border': '1px solid' ,'border-color': content.title_style}">
+      <h1 [ngStyle]="{ 'color': content.title_style}" >{{ content.title }}</h1>
+      {{ content.description }}
+      <button [ngStyle]="{'background-color': content.color, 'width' : '150px'}" (click)="border_change(content.color, i)">{{content.color}}</button>
+    </div>
+    </div>
+</div>
